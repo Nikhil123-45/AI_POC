@@ -1,0 +1,130 @@
+.sidebar{
+    width:280px;
+    min-height:100vh;
+    background:#FFFFFF;
+    border-right:1px solid #E5E7EB;
+    display:flex;
+    flex-direction:column;
+    transition:.3s;
+    flex-shrink:0;
+}
+
+.sidebar.collapsed{
+    width:90px;
+}
+
+.sidebar-top{
+    padding:22px 18px;
+    border-bottom:1px solid #E5E7EB;
+}
+
+.header-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+}
+
+.logo-box{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-icon{
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#7C8DFF,#B667FF);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#FFFFFF;
+    font-size:24px;
+    flex-shrink:0;
+}
+
+.logo-title{
+    color:#111827;
+    font-size:14px;
+    font-weight:700;
+    line-height:20px;
+}
+
+.sidebar-toggle{
+    width:36px;
+    height:36px;
+    border-radius:10px;
+    background:#F3F4F6;
+    border:1px solid #E5E7EB;
+    color:#374151;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.sidebar-toggle:hover{
+    background:#E5E7EB;
+}
+
+.menu-section{
+    padding:18px 12px;
+}
+
+.menu-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px 14px;
+    border-radius:12px;
+    color:#374151;
+    font-size:14px;
+    font-weight:500;
+    cursor:pointer;
+    margin-bottom:8px;
+    transition:.25s;
+}
+
+.menu-item:hover{
+    background:#EFF6FF;
+    color:#2563EB;
+}
+
+.menu-item.active{
+    background:#DBEAFE;
+    color:#2563EB;
+    font-weight:600;
+}
+
+.menu-icon{
+    font-size:18px;
+    flex-shrink:0;
+}
+
+.sidebar.collapsed .sidebar-top{
+    padding:18px 8px;
+}
+
+.sidebar.collapsed .header-row{
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+}
+
+.sidebar.collapsed .logo-box{
+    justify-content:center;
+}
+
+.sidebar.collapsed .logo-title{
+    display:none;
+}
+
+.sidebar.collapsed .menu-item{
+    justify-content:center;
+    padding:12px;
+}
+
+.sidebar.collapsed .menu-icon{
+    margin:0;
+}

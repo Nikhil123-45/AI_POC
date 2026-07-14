@@ -1,0 +1,813 @@
+/* ==========================================================
+   CARD
+========================================================== */
+
+.comparison-boxplot-card{
+
+    width:100%;
+
+    background:#FFFFFF;
+
+    border:1px solid #E5E7EB;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 6px 18px rgba(15,23,42,.05);
+
+    transition:.25s;
+
+}
+
+.comparison-boxplot-card:hover{
+
+    box-shadow:
+        0 12px 28px rgba(15,23,42,.08);
+
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.comparison-boxplot-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 24px;
+
+    border-bottom:1px solid #EEF2F7;
+
+    background:#FFFFFF;
+
+}
+
+.comparison-boxplot-title{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.comparison-boxplot-title h3{
+
+    margin:0;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:#1E293B;
+
+}
+
+.comparison-boxplot-title span{
+
+    margin-left:8px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    color:#64748B;
+
+}
+
+/* ==========================================================
+   CONTROLS
+========================================================== */
+
+.comparison-boxplot-controls{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.comparison-boxplot-controls label{
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#475569;
+
+}
+
+.comparison-boxplot-controls select{
+
+    min-width:240px;
+
+    height:40px;
+
+    padding:0 14px;
+
+    border-radius:10px;
+
+    border:1px solid #CBD5E1;
+
+    background:#FFFFFF;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    color:#334155;
+
+    outline:none;
+
+    transition:.2s;
+
+    cursor:pointer;
+
+}
+
+.comparison-boxplot-controls select:hover{
+
+    border-color:#3B82F6;
+
+}
+
+.comparison-boxplot-controls select:focus{
+
+    border-color:#2563EB;
+
+    box-shadow:
+        0 0 0 3px rgba(37,99,235,.12);
+
+}
+/* ==========================================================
+   LEGEND
+========================================================== */
+
+.comparison-boxplot-legend{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:28px;
+
+    padding:16px 24px;
+
+    background:#F8FAFC;
+
+    border-bottom:1px solid #EEF2F7;
+
+}
+
+.legend-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#475569;
+
+}
+
+.legend-dot{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+}
+
+.legend-dot.best{
+
+    background:#22C55E;
+
+}
+
+.legend-dot.worst{
+
+    background:#F59E0B;
+
+}
+
+.legend-box{
+
+    width:30px;
+
+    height:12px;
+
+    border-radius:6px;
+
+    background:#3B82F6;
+
+}
+
+/* ==========================================================
+   AXIS
+========================================================== */
+
+.comparison-axis{
+
+    display:grid;
+
+    grid-template-columns:220px 1fr;
+
+    align-items:center;
+
+    padding:16px 24px 8px;
+
+}
+
+.comparison-axis-left{
+
+    height:1px;
+
+}
+
+.comparison-axis-right{
+
+    display:grid;
+
+    grid-template-columns:repeat(11,1fr);
+
+    position:relative;
+
+}
+
+.comparison-axis-tick{
+
+    text-align:center;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    color:#64748B;
+
+}
+
+/* ==========================================================
+   BODY
+========================================================== */
+
+.comparison-boxplot-body{
+
+    padding:0 24px 24px;
+
+}
+
+.comparison-row{
+
+    display:grid;
+
+    grid-template-columns:220px 1fr;
+
+    align-items:center;
+
+    min-height:74px;
+
+    border-bottom:1px solid #EEF2F7;
+
+}
+
+.comparison-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.comparison-label{
+
+    padding-right:18px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#1E293B;
+
+    line-height:1.4;
+
+}
+
+.comparison-chart{
+
+    position:relative;
+
+    width:100%;
+
+    height:74px;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.comparison-track{
+
+    position:relative;
+
+    width:100%;
+
+    height:54px;
+
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.comparison-grid-line{
+
+    position:absolute;
+
+    top:0;
+
+    bottom:0;
+
+    width:1px;
+
+    background:#E5E7EB;
+
+    transform:translateX(-50%);
+
+}
+/* ==========================================================
+   WHISKER
+========================================================== */
+
+.comparison-whisker{
+
+    position:absolute;
+
+    top:50%;
+
+    height:3px;
+
+    background:#475569;
+
+    border-radius:10px;
+
+    transform:translateY(-50%);
+
+}
+
+/* ==========================================================
+   BEST MARKER
+========================================================== */
+
+.comparison-best{
+
+    position:absolute;
+
+    top:50%;
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:#22C55E;
+
+    border:3px solid #FFFFFF;
+
+    box-shadow:
+        0 2px 6px rgba(0,0,0,.18);
+
+    transform:
+        translate(-50%,-50%);
+
+    z-index:3;
+
+}
+
+/* ==========================================================
+   WORST MARKER
+========================================================== */
+
+.comparison-worst{
+
+    position:absolute;
+
+    top:50%;
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:#F59E0B;
+
+    border:3px solid #FFFFFF;
+
+    box-shadow:
+        0 2px 6px rgba(0,0,0,.18);
+
+    transform:
+        translate(-50%,-50%);
+
+    z-index:3;
+
+}
+
+/* ==========================================================
+   TYPICAL RANGE
+========================================================== */
+
+.comparison-range{
+
+    position:absolute;
+
+    top:50%;
+
+    height:22px;
+
+    border-radius:7px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#FFFFFF;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+    transform:
+        translateY(-50%);
+
+    box-shadow:
+        0 4px 10px rgba(15,23,42,.12);
+
+    z-index:2;
+
+}
+
+/* ==========================================================
+   VALUE LABELS
+========================================================== */
+
+.comparison-best-label{
+
+    position:absolute;
+
+    top:-2px;
+
+    transform:
+        translateX(-50%);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    color:#15803D;
+
+    white-space:nowrap;
+
+}
+
+.comparison-worst-label{
+
+    position:absolute;
+
+    top:-2px;
+
+    transform:
+        translateX(-50%);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    color:#D97706;
+
+    white-space:nowrap;
+
+}
+
+/* ==========================================================
+   ANIMATION
+========================================================== */
+
+.comparison-range,
+.comparison-best,
+.comparison-worst{
+
+    transition:
+        all .25s ease;
+
+}
+
+.comparison-row:hover .comparison-range{
+
+    transform:
+        translateY(-50%)
+        scale(1.04);
+
+}
+
+.comparison-row:hover .comparison-best,
+.comparison-row:hover .comparison-worst{
+
+    transform:
+        translate(-50%,-50%)
+        scale(1.18);
+
+}
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:1400px){
+
+    .comparison-boxplot-header{
+
+        padding:16px 18px;
+
+    }
+
+    .comparison-boxplot-title h3{
+
+        font-size:18px;
+
+    }
+
+    .comparison-boxplot-controls select{
+
+        min-width:210px;
+
+        font-size:13px;
+
+    }
+
+    .comparison-axis{
+
+        grid-template-columns:190px 1fr;
+
+    }
+
+    .comparison-row{
+
+        grid-template-columns:190px 1fr;
+
+    }
+
+    .comparison-label{
+
+        font-size:13px;
+
+    }
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:992px){
+
+    .comparison-boxplot-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:16px;
+
+    }
+
+    .comparison-boxplot-controls{
+
+        width:100%;
+
+    }
+
+    .comparison-boxplot-controls select{
+
+        width:100%;
+
+        min-width:unset;
+
+    }
+
+    .comparison-axis{
+
+        grid-template-columns:160px 1fr;
+
+    }
+
+    .comparison-row{
+
+        grid-template-columns:160px 1fr;
+
+    }
+
+    .comparison-label{
+
+        font-size:12px;
+
+        padding-right:12px;
+
+    }
+
+    .comparison-boxplot-legend{
+
+        gap:18px;
+
+        flex-wrap:wrap;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    .comparison-boxplot-card{
+
+        border-radius:16px;
+
+    }
+
+    .comparison-boxplot-header{
+
+        padding:14px;
+
+    }
+
+    .comparison-boxplot-title h3{
+
+        font-size:16px;
+
+    }
+
+    .comparison-boxplot-title span{
+
+        font-size:12px;
+
+    }
+
+    .comparison-boxplot-controls{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:8px;
+
+    }
+
+    .comparison-boxplot-controls label{
+
+        font-size:12px;
+
+    }
+
+    .comparison-boxplot-controls select{
+
+        width:100%;
+
+        height:38px;
+
+        font-size:12px;
+
+    }
+
+    .comparison-boxplot-legend{
+
+        justify-content:flex-start;
+
+        gap:14px;
+
+        padding:12px 14px;
+
+    }
+
+    .legend-item{
+
+        font-size:11px;
+
+    }
+
+    .comparison-axis{
+
+        display:none;
+
+    }
+
+    .comparison-boxplot-body{
+
+        padding:0 14px 18px;
+
+    }
+
+    .comparison-row{
+
+        grid-template-columns:1fr;
+
+        gap:10px;
+
+        padding:16px 0;
+
+        min-height:auto;
+
+    }
+
+    .comparison-label{
+
+        padding-right:0;
+
+        font-size:13px;
+
+    }
+
+    .comparison-chart{
+
+        height:56px;
+
+    }
+
+    .comparison-track{
+
+        height:42px;
+
+    }
+
+    .comparison-range{
+
+        height:18px;
+
+        font-size:10px;
+
+    }
+
+    .comparison-best,
+
+    .comparison-worst{
+
+        width:12px;
+
+        height:12px;
+
+    }
+
+    .comparison-best-label,
+
+    .comparison-worst-label{
+
+        font-size:9px;
+
+    }
+
+}
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+.comparison-boxplot-body::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.comparison-boxplot-body::-webkit-scrollbar-thumb{
+
+    background:#CBD5E1;
+
+    border-radius:8px;
+
+}
+
+.comparison-boxplot-body::-webkit-scrollbar-track{
+
+    background:#F8FAFC;
+
+}

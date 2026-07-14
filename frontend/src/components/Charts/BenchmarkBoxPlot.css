@@ -1,0 +1,873 @@
+/* ==========================================================
+   BenchmarkBoxPlot.css
+   Part 4A-1 : Card + Header
+========================================================== */
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.benchmark-boxplot-card {
+
+    width: 100%;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E6ECF5;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow: 0 2px 8px rgba(15,23,42,.04);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+
+}
+
+.benchmark-boxplot-card:hover {
+
+    transform: translateY(-2px);
+
+    border-color: #D8E3F2;
+
+    box-shadow:
+        0 8px 20px rgba(15,23,42,.08);
+
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.benchmark-boxplot-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    min-height: 56px;
+
+    padding: 12px 18px;
+
+}
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.benchmark-boxplot-title {
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+.benchmark-boxplot-title h3 {
+
+    margin: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #FFFFFF;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: -.02em;
+
+    line-height: 1.2;
+
+}
+
+.benchmark-boxplot-title h3 span {
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    opacity: .95;
+
+}
+
+/* ==========================================================
+   FILTER
+========================================================== */
+
+.benchmark-boxplot-filter {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+.benchmark-boxplot-filter label {
+
+    color: #FFFFFF;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+}
+
+.benchmark-boxplot-filter select {
+
+    min-width: 180px;
+
+    height: 34px;
+
+    padding: 0 12px;
+
+    background: #FFFFFF;
+
+    color: #334155;
+
+    border: none;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        box-shadow .25s ease,
+        transform .2s ease;
+
+}
+
+.benchmark-boxplot-filter select:hover {
+
+    box-shadow: 0 0 0 2px rgba(255,255,255,.35);
+
+}
+
+.benchmark-boxplot-filter select:focus {
+
+    box-shadow: 0 0 0 3px rgba(255,255,255,.45);
+
+}
+/* ==========================================================
+   LEGEND
+   Part 4A-2 : Legend + Scale
+========================================================== */
+
+/* ==========================================================
+   LEGEND
+========================================================== */
+
+.benchmark-boxplot-legend {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 22px;
+
+    padding: 10px 18px;
+
+    background: #F8FAFC;
+
+    border-bottom: 1px solid #E5E7EB;
+
+}
+
+.legend-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #475569;
+
+}
+
+.legend-best {
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #22C55E;
+
+    flex-shrink: 0;
+
+}
+
+.legend-range {
+
+    width: 28px;
+
+    height: 8px;
+
+    border-radius: 999px;
+
+    background: #2563EB;
+
+    flex-shrink: 0;
+
+}
+
+.legend-worst {
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #F59E0B;
+
+    flex-shrink: 0;
+
+}
+
+/* ==========================================================
+   SCALE WRAPPER
+========================================================== */
+
+.benchmark-scale-wrapper {
+
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    align-items: center;
+
+    gap: 0;
+
+    padding: 12px 18px 8px;
+
+    background: #FFFFFF;
+
+}
+
+.benchmark-scale-label {
+
+    height: 100%;
+
+}
+
+/* ==========================================================
+   SCALE
+========================================================== */
+
+.benchmark-scale {
+
+    display: grid;
+
+    grid-template-columns: repeat(13, 1fr);
+
+    align-items: center;
+
+}
+
+.benchmark-scale-item {
+
+    position: relative;
+
+    text-align: center;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    color: #64748B;
+
+    line-height: 1.2;
+
+}
+
+.benchmark-scale-item::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 18px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 1px;
+
+    height: 18px;
+
+    background: #E5E7EB;
+
+}
+
+/* ==========================================================
+   THEME
+========================================================== */
+
+.benchmark-boxplot-card.green .legend-range {
+
+    background: #16A34A;
+
+}
+
+.benchmark-boxplot-card.purple .legend-range {
+
+    background: #2563EB;
+
+}
+/* ==========================================================
+   BODY
+   Part 4A-3 : Body + Benchmark Rows
+========================================================== */
+
+/* ==========================================================
+   BODY
+========================================================== */
+
+.benchmark-boxplot-body {
+
+    padding: 0 18px 18px;
+
+    background: #FFFFFF;
+
+}
+
+/* ==========================================================
+   ROW SPACING
+========================================================== */
+
+.benchmark-boxplot-body .benchmark-row {
+
+    position: relative;
+
+    min-height: 68px;
+
+    padding: 4px 0;
+
+    border-bottom: 1px solid #EEF2F7;
+
+}
+
+.benchmark-boxplot-body .benchmark-row:last-child {
+
+    border-bottom: none;
+
+}
+
+/* ==========================================================
+   LABEL
+========================================================== */
+
+.benchmark-boxplot-body .benchmark-row-label {
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #334155;
+
+}
+
+/* ==========================================================
+   CHART
+========================================================== */
+
+.benchmark-boxplot-body .benchmark-row-chart {
+
+    height: 58px;
+
+}
+
+/* ==========================================================
+   CONNECTOR
+========================================================== */
+
+.benchmark-boxplot-body .benchmark-connector {
+
+    top: 31px;
+
+    height: 2px;
+
+    background: #94A3B8;
+
+    border-radius: 2px;
+
+}
+
+/* ==========================================================
+   BEST DOT
+========================================================== */
+
+.benchmark-boxplot-body .benchmark-best-dot {
+
+    top: 25px;
+
+    width: 10px;
+
+    height: 10px;
+
+    margin-left: -5px;
+
+}
+
+.benchmark-boxplot-body .benchmark-best-value {
+
+    top: 0;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+/* ==========================================================
+   WORST DOT
+========================================================== */
+
+.benchmark-boxplot-body .benchmark-worst-dot {
+
+    top: 25px;
+
+    width: 10px;
+
+    height: 10px;
+
+    margin-left: -5px;
+
+}
+
+.benchmark-boxplot-body .benchmark-worst-value {
+
+    top: 0;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+/* ==========================================================
+   RANGE BAR
+========================================================== */
+
+.benchmark-boxplot-body .benchmark-range {
+
+    top: 18px;
+
+    height: 24px;
+
+    border-radius: 5px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    box-shadow: 0 2px 6px rgba(37,99,235,.16);
+
+}
+
+.benchmark-boxplot-body .benchmark-range span {
+
+    white-space: nowrap;
+
+    padding: 0 8px;
+
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.benchmark-boxplot-body .benchmark-grid {
+
+    inset: 0;
+
+}
+
+.benchmark-boxplot-body .grid-line {
+
+    border-left: 1px solid #EEF2F7;
+
+}
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.benchmark-boxplot-body .benchmark-row {
+
+    transition:
+        background .22s ease,
+        transform .22s ease;
+
+}
+
+.benchmark-boxplot-body .benchmark-row:hover {
+
+    background: #F8FBFF;
+
+}
+
+.benchmark-boxplot-body .benchmark-row:hover .benchmark-range {
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 6px 14px rgba(37,99,235,.18);
+
+}
+
+.benchmark-boxplot-body .benchmark-row:hover .benchmark-best-dot,
+
+.benchmark-boxplot-body .benchmark-row:hover .benchmark-worst-dot {
+
+    transform: scale(1.08);
+
+}
+/* ==========================================================
+   RESPONSIVE
+   Part 4A-4 : Responsive + Cleanup
+========================================================== */
+
+/* ==========================================================
+   LARGE LAPTOP
+========================================================== */
+
+@media (max-width:1400px) {
+
+    .benchmark-boxplot-header {
+
+        padding: 11px 16px;
+
+    }
+
+    .benchmark-boxplot-title h3 {
+
+        font-size: 15px;
+
+    }
+
+    .benchmark-boxplot-title h3 span {
+
+        font-size: 12px;
+
+    }
+
+    .benchmark-boxplot-filter select {
+
+        min-width: 170px;
+
+    }
+
+    .benchmark-scale-wrapper {
+
+        grid-template-columns: 170px 1fr;
+
+        padding: 10px 16px 8px;
+
+    }
+
+    .benchmark-boxplot-legend {
+
+        gap: 18px;
+
+    }
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:992px) {
+
+    .benchmark-boxplot-card {
+
+        overflow-x: auto;
+
+    }
+
+    .benchmark-boxplot-header {
+
+        min-width: 950px;
+
+        padding: 10px 16px;
+
+    }
+
+    .benchmark-boxplot-legend {
+
+        min-width: 950px;
+
+        padding: 10px 16px;
+
+        gap: 16px;
+
+    }
+
+    .benchmark-scale-wrapper {
+
+        min-width: 950px;
+
+    }
+
+    .benchmark-boxplot-body {
+
+        min-width: 950px;
+
+    }
+
+    .benchmark-boxplot-filter label {
+
+        font-size: 11px;
+
+    }
+
+    .benchmark-boxplot-filter select {
+
+        min-width: 160px;
+
+        height: 32px;
+
+        font-size: 11px;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px) {
+
+    .benchmark-boxplot-header {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 12px;
+
+        padding: 10px 14px;
+
+    }
+
+    .benchmark-boxplot-title h3 {
+
+        font-size: 14px;
+
+    }
+
+    .benchmark-boxplot-title h3 span {
+
+        font-size: 11px;
+
+    }
+
+    .benchmark-boxplot-filter {
+
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 8px;
+
+    }
+
+    .benchmark-boxplot-filter label {
+
+        font-size: 11px;
+
+    }
+
+    .benchmark-boxplot-filter select {
+
+        width: 100%;
+
+        min-width: unset;
+
+        font-size: 11px;
+
+        height: 32px;
+
+    }
+
+    .benchmark-boxplot-legend {
+
+        justify-content: flex-start;
+
+        gap: 12px;
+
+        padding: 10px 14px;
+
+    }
+
+    .legend-item {
+
+        font-size: 11px;
+
+    }
+
+    .benchmark-scale-wrapper {
+
+        padding: 10px 14px 6px;
+
+        grid-template-columns: 150px 1fr;
+
+    }
+
+    .benchmark-scale-item {
+
+        font-size: 10px;
+
+    }
+
+    .benchmark-scale-item::after {
+
+        height: 14px;
+
+        top: 16px;
+
+    }
+
+    .benchmark-boxplot-body {
+
+        padding: 0 14px 14px;
+
+    }
+
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width:480px) {
+
+    .benchmark-boxplot-header {
+
+        padding: 8px 12px;
+
+    }
+
+    .benchmark-boxplot-title h3 {
+
+        font-size: 13px;
+
+    }
+
+    .benchmark-boxplot-legend {
+
+        padding: 8px 12px;
+
+    }
+
+    .benchmark-scale-wrapper {
+
+        padding: 8px 12px 6px;
+
+    }
+
+    .benchmark-boxplot-body {
+
+        padding: 0 12px 12px;
+
+    }
+
+}
+
+/* ==========================================================
+   SMOOTH ANIMATIONS
+========================================================== */
+
+.benchmark-boxplot-card,
+.benchmark-boxplot-header,
+.benchmark-boxplot-legend,
+.benchmark-boxplot-body,
+.benchmark-scale-wrapper,
+.benchmark-boxplot-filter select {
+
+    transition:
+        all .25s ease;
+
+}
+
+/* ==========================================================
+   CLEANUP
+========================================================== */
+
+.benchmark-boxplot-card {
+
+    margin: 0;
+
+}
+
+.benchmark-boxplot-body .benchmark-row:last-child {
+
+    margin-bottom: 0;
+
+}
+
+.benchmark-boxplot-body {
+
+    border-bottom-left-radius: 14px;
+
+    border-bottom-right-radius: 14px;
+
+}
+
+.benchmark-scale-wrapper,
+.benchmark-boxplot-legend {
+
+    border-left: none;
+
+    border-right: none;
+
+}
+
+/* ==========================================================
+   END OF BenchmarkBoxPlot.css
+========================================================== */

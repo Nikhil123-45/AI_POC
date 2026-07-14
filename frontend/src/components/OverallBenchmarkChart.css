@@ -1,0 +1,156 @@
+/* ==========================================================
+   OVERALL BENCHMARK CARD
+========================================================== */
+
+.overall-benchmark-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#FFFFFF;
+
+    border:1px solid #E6ECF5;
+
+    border-radius:24px;
+
+    padding:20px 20px 18px;
+
+    box-shadow:
+        0 10px 30px rgba(15,23,42,.06),
+        0 2px 6px rgba(15,23,42,.04);
+
+    transition:.30s;
+
+}
+
+.overall-benchmark-card:hover{
+
+    box-shadow:
+        0 18px 40px rgba(15,23,42,.08);
+
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.overall-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:14px;
+
+}
+
+.overall-title{
+
+    margin:0;
+
+    display:flex;
+
+    align-items:baseline;
+
+    gap:8px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#0F172A;
+
+}
+
+.overall-title span{
+
+    color:#64748B;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.overall-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,minmax(0,1fr));
+
+    gap:14px;
+
+    align-items:start;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:1600px){
+
+.overall-grid{
+
+    gap:12px;
+
+}
+
+}
+
+@media(max-width:1350px){
+
+.overall-grid{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+}
+
+@media(max-width:900px){
+
+.overall-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:650px){
+
+.overall-benchmark-card{
+
+    padding:18px;
+
+}
+
+.overall-header{
+
+    margin-bottom:12px;
+
+}
+
+.overall-title{
+
+    font-size:17px;
+
+}
+
+.overall-grid{
+
+    grid-template-columns:1fr;
+
+    gap:14px;
+
+}
+
+}

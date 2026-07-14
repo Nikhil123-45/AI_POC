@@ -1,0 +1,133 @@
+/* =====================================
+   Indication Chart
+===================================== */
+
+.benchmark-title {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #111827;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.benchmark-title span {
+  color: #6B7280;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* =====================================
+   Metric Dropdown
+===================================== */
+
+.metric-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metric-dropdown label {
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.metric-dropdown select {
+  width: 290px;
+  height: 42px;
+
+  background: #FFFFFF;
+  color: #111827;
+
+  border: 1px solid #D1D5DB;
+  border-radius: 12px;
+
+  padding: 0 16px;
+
+  font-size: 15px;
+
+  outline: none;
+  transition: all .25s ease;
+}
+
+.metric-dropdown select:hover {
+  border-color: #3B82F6;
+}
+
+.metric-dropdown select:focus {
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+}
+
+/* =====================================
+   Recharts Legend
+===================================== */
+
+.recharts-default-legend {
+  font-size: 13px !important;
+}
+
+.recharts-legend-item-text {
+  font-size: 13px !important;
+  fill: #111827 !important;
+  color: #111827 !important;
+}
+
+/* =====================================
+   Recharts Axis
+===================================== */
+
+.recharts-cartesian-axis-line {
+  stroke: #CBD5E1;
+}
+
+.recharts-cartesian-axis-tick-line {
+  stroke: #CBD5E1;
+}
+
+.recharts-cartesian-grid line {
+  stroke: #E5E7EB;
+}
+
+.recharts-cartesian-axis-tick text {
+  fill: #374151;
+  font-size: 12px;
+}
+
+/* =====================================
+   Tooltip
+===================================== */
+
+.recharts-default-tooltip{
+  background:#FFFFFF !important;
+  border:1px solid #D1D5DB !important;
+  border-radius:10px !important;
+  color:#111827 !important;
+}
+
+/* =====================================
+   Responsive
+===================================== */
+
+@media (max-width: 992px) {
+
+  .benchmark-title {
+    font-size: 15px;
+  }
+
+  .benchmark-title span {
+    font-size: 12px;
+  }
+
+  .metric-dropdown {
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .metric-dropdown select {
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,295 @@
+/* ==========================================================
+   CARD
+========================================================== */
+
+.distribution-card{
+
+    width:100%;
+
+    background:#FFFFFF;
+
+    border-radius:18px;
+
+    border:1px solid #E5E7EB;
+
+    overflow:hidden;
+
+    box-shadow:0 6px 16px rgba(15,23,42,.05);
+
+    font-family:"Inter",sans-serif;
+
+    margin-bottom:28px;   /* Space between Timeline & Cost tables */
+
+}
+
+.distribution-card:last-child{
+
+    margin-bottom:0;
+
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.distribution-header{
+
+    padding:16px 22px;
+
+}
+
+.distribution-card.purple .distribution-header{
+
+    background:linear-gradient(90deg,#8B5CF6,#7C3AED);
+
+}
+
+.distribution-card.green .distribution-header{
+
+    background:linear-gradient(90deg,#22C55E,#16A34A);
+
+}
+
+.distribution-header h3{
+
+    margin:0;
+
+    color:#FFFFFF;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.distribution-header span{
+
+    font-size:15px;
+
+    font-weight:500;
+
+    opacity:.9;
+
+}
+
+/* ==========================================================
+   TABLE
+========================================================== */
+
+.distribution-table-wrapper{
+
+    width:100%;
+
+    overflow-x:auto;
+
+}
+
+.distribution-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    table-layout:fixed;
+
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.distribution-table thead th{
+
+    background:#F8FAFC;
+
+    border-bottom:1px solid #E5E7EB;
+
+    border-right:1px solid #EEF2F7;
+
+    padding:14px 10px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    text-align:center;
+
+    color:#334155;
+
+}
+
+.distribution-table thead th:last-child{
+
+    border-right:none;
+
+}
+
+.metric-column{
+
+    width:32%;
+
+    text-align:left !important;
+
+}
+
+.region-column{
+
+    width:17%;
+
+    color:#2563EB;
+
+}
+
+/* ==========================================================
+   BODY
+========================================================== */
+
+.distribution-table tbody td{
+
+    padding:15px 10px;
+
+    border-bottom:1px solid #EEF2F7;
+
+    border-right:1px solid #EEF2F7;
+
+    text-align:center;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#111827;
+
+}
+
+.distribution-table tbody td:last-child{
+
+    border-right:none;
+
+}
+
+/* ==========================================================
+   METRIC
+========================================================== */
+
+.metric-name{
+
+    text-align:left !important;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+/* ==========================================================
+   REGION VALUES
+========================================================== */
+
+.region-value{
+
+    font-size:13px;
+
+    font-weight:800;
+
+}
+
+.north-america{
+
+    color:#2563EB;
+
+}
+
+.europe{
+
+    color:#7C3AED;
+
+}
+
+.apac{
+
+    color:#EA580C;
+
+}
+
+.latam{
+
+    color:#15803D;
+
+}
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.distribution-table tbody tr{
+
+    transition:.2s ease;
+
+}
+
+.distribution-table tbody tr:hover td{
+
+    background:#F8FBFF;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:1200px){
+
+    .distribution-table{
+
+        min-width:850px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .distribution-header{
+
+        padding:14px 18px;
+
+    }
+
+    .distribution-header h3{
+
+        font-size:17px;
+
+    }
+
+    .distribution-header span{
+
+        font-size:13px;
+
+    }
+
+    .distribution-table thead th{
+
+        font-size:12px;
+
+        padding:12px 8px;
+
+    }
+
+    .distribution-table tbody td{
+
+        font-size:12px;
+
+        padding:12px 8px;
+
+    }
+
+}

@@ -1,0 +1,117 @@
+.overall-table-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #edf2f7;
+}
+
+.overall-table-header {
+  padding: 18px 24px;
+  background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+}
+
+.overall-table-header h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.overall-table-header span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.overall-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.overall-table th {
+  padding: 18px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  background: #fafbfd;
+  border: 1px solid #eef2f7;
+}
+
+.overall-table td {
+  padding: 18px;
+  text-align: center;
+  border: 1px solid #eef2f7;
+  font-size: 14px;
+}
+
+.metric-col {
+  text-align: left;
+  width: 240px;
+}
+
+.metric-name {
+  text-align: left;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.best-col {
+  color: #15803d;
+}
+
+.best-col span {
+  font-weight: 500;
+}
+
+.best-value {
+  color: #15803d;
+  font-weight: 700;
+}
+
+.p25-col {
+  color: #2563eb;
+}
+
+.p25-value {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.p50-col {
+  color: #1d4ed8;
+}
+
+.p50-col span {
+  font-weight: 500;
+}
+
+.p50-value {
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.p75-col {
+  color: #ea580c;
+}
+
+.p75-value {
+  color: #ea580c;
+  font-weight: 700;
+}
+
+.p90-col {
+  color: #dc2626;
+}
+
+.p90-value {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.table-footer {
+  padding: 14px 24px;
+  font-size: 13px;
+  color: #64748b;
+  border-top: 1px solid #eef2f7;
+  background: #fafbfd;
+}

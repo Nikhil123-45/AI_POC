@@ -1,0 +1,349 @@
+.metadata-page {
+  padding: 20px;
+  background: #f7f9fc;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.metadata-header {
+  margin-bottom: 22px;
+}
+
+.metadata-header h1 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.metadata-header p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* =========================================
+   OVERVIEW CARDS
+========================================= */
+
+.overview-grid{
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:16px;
+    margin-bottom:20px;
+}
+
+.overview-card{
+    background:#FFFFFF;
+    border:1px solid #E7EDF7;
+    border-radius:16px;
+    padding:16px 18px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    min-height:100px;
+    box-shadow:0 4px 12px rgba(15,23,42,.04);
+    transition:.25s;
+}
+
+.overview-card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(15,23,42,.08);
+}
+
+.overview-icon{
+    width:56px;
+    height:56px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+}
+
+.overview-icon svg{
+    width:24px;
+    height:24px;
+}
+
+.overview-icon.purple{
+    background:#F3E8FF;
+    color:#8B5CF6;
+}
+
+.overview-icon.blue{
+    background:#DBEAFE;
+    color:#2563EB;
+}
+
+.overview-icon.green{
+    background:#DCFCE7;
+    color:#16A34A;
+}
+
+.overview-icon.orange{
+    background:#FFEDD5;
+    color:#F97316;
+}
+
+.overview-icon.pink{
+    background:#FCE7F3;
+    color:#DB2777;
+}
+
+.overview-content{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    line-height:1.15;
+}
+
+/* Value (25,000 / 15 Jan 2015 / 12) */
+
+.overview-value{
+    font-size:18px;
+    font-weight:700;
+    color:#111827;
+    line-height:1.15;
+    margin-bottom:4px;
+}
+
+/* Label (Total Studies / Start Date) */
+
+.overview-label{
+    font-size:13px;
+    font-weight:700;
+    color:#64748B;
+    line-height:1.2;
+}
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.meta-section {
+  background: #fff;
+  border: 1px solid #e6edf7;
+  border-radius: 18px;
+  padding: 22px;
+  margin-bottom: 24px;
+  box-shadow: 0 6px 18px rgba(15,23,42,.04);
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.section-subtitle{
+  margin-top: 4px;
+  margin-bottom: 18px;
+
+  font-size: 12px;      /* smaller */
+  font-weight: 600;     /* slightly bold */
+  line-height: 1.5;
+
+  color: #64748B;       /* same grey */
+}
+
+/* =========================================
+   MODEL GRID
+========================================= */
+
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.model-card {
+  border: 1px solid #edf2f7;
+  border-radius: 16px;
+  padding: 18px;
+  text-align: center;
+  transition: .25s;
+}
+
+.model-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(15,23,42,.06);
+}
+
+.model-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 12px;
+}
+
+.model-icon.blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.model-icon.orange {
+  background: #ffedd5;
+  color: #ea580c;
+}
+
+.model-icon.green {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.model-icon.purple {
+  background: #f3e8ff;
+  color: #8b5cf6;
+}
+
+.model-icon.pink {
+  background: #fce7f3;
+  color: #db2777;
+}
+
+.model-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.model-desc{
+  font-size:10px;
+  font-weight:600;
+  line-height:1.6;
+}
+
+/* Same colour as icon */
+
+.model-desc.blue{
+  color:#2563EB;
+}
+
+.model-desc.orange{
+  color:#EA580C;
+}
+
+.model-desc.green{
+  color:#16A34A;
+}
+
+.model-desc.purple{
+  color:#8B5CF6;
+}
+
+.model-desc.pink{
+  color:#DB2777;
+}
+
+/* =========================================
+   TABLE
+========================================= */
+
+.percentile-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.percentile-table th {
+  background: #f8fafc;
+  color: #334155;
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+  text-align: left;
+}
+
+.percentile-table td {
+  padding: 16px 14px;
+  border-bottom: 1px solid #edf2f7;
+  font-size: 14px;
+  color: #475569;
+}
+
+.badge {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* =========================================
+   EXAMPLE
+========================================= */
+
+.example-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.people {
+  display: flex;
+  gap: 4px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:1400px){
+
+.model-grid{
+grid-template-columns:repeat(3,1fr);
+}
+
+.overview-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.overview-grid{
+grid-template-columns:1fr;
+}
+
+.model-grid{
+grid-template-columns:1fr;
+}
+
+.percentile-table{
+display:block;
+overflow:auto;
+white-space:nowrap;
+}
+
+.metadata-header h1{
+font-size:24px;
+}
+
+}
+/* =========================================
+   FINAL MODEL HIGHLIGHT
+========================================= */
+
+.model-card.active-model{
+    background:#FFFFFF;          /* remove blue background */
+    border:2px solid #2563EB;    /* blue border only */
+    box-shadow:none;             /* remove shadow */
+}
+
+.model-card.active-model:hover{
+    transform:translateY(-3px);
+    border-color:#2563EB;
+    box-shadow:0 8px 18px rgba(37,99,235,.10);
+}

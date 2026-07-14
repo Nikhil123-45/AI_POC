@@ -1,0 +1,1559 @@
+/* ==========================================================
+   BENCHMARK SUMMARY PAGE
+   Part 1A-1 : Page + Filters
+========================================================== */
+
+/* ==========================================================
+   PAGE
+========================================================== */
+
+.benchmark-summary-page {
+    width: 100%;
+    min-height: 100%;
+    background: #F7F9FC;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    box-sizing: border-box;
+}
+
+/* ==========================================================
+   FILTER CARD
+========================================================== */
+
+.filter-card {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #E5EAF3;
+    border-radius: 14px;
+    padding: 14px 16px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    transition: all .25s ease;
+}
+
+.filter-card:hover {
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+/* ==========================================================
+   FILTER TOOLBAR
+========================================================== */
+
+.filter-toolbar {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 12px;
+    align-items: end;
+}
+
+/* ==========================================================
+   FILTER ITEM
+========================================================== */
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.filter-item label {
+    margin-bottom: 6px;
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #64748B;
+    line-height: 1.2;
+}
+
+/* ==========================================================
+   SELECT
+========================================================== */
+
+.filter-select {
+    position: relative;
+    width: 100%;
+}
+
+.filter-select select {
+    width: 100%;
+    height: 36px;
+    padding: 0 34px 0 11px;
+
+    appearance: none;
+    outline: none;
+
+    background: #FFFFFF;
+
+    border: 1px solid #D7E2EF;
+    border-radius: 9px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+
+    /* CHANGE THIS */
+    font-weight: 700;
+
+    color: #1E293B;
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+.filter-select select option {
+    font-weight: 700;
+    color: #1E293B;
+}
+
+.filter-select select:hover {
+    border-color: #8B5CF6;
+}
+
+.filter-select select:focus {
+    border-color: #8B5CF6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, .12);
+}
+
+/* ==========================================================
+   DROPDOWN ICON
+========================================================== */
+
+.dropdown-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #64748B;
+    font-size: 12px;
+}
+
+/* ==========================================================
+   COMPARE BY / CHART TYPE
+========================================================== */
+
+.compare-filter select,
+.chart-filter select {
+    background: #FBF9FF;
+    border: 1.5px solid #C4B5FD;
+    font-weight: 600;
+}
+
+.compare-filter select:hover,
+.chart-filter select:hover {
+    border-color: #8B5CF6;
+}
+
+.compare-filter .dropdown-icon,
+.chart-filter .dropdown-icon {
+    color: #8B5CF6;
+}
+/* ==========================================================
+   KPI SECTION
+========================================================== */
+
+.kpi-section {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin: 2px 0 6px;
+    width: 100%;
+    align-items: stretch;
+}
+
+/* ==========================================================
+   KPI CARD
+========================================================== */
+
+.kpi-card {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-height: 74px;
+    height: 74px;
+
+    padding: 14px 20px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E6ECF5;
+    border-radius: 14px;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, .04);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+.kpi-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(15, 23, 42, .08);
+
+}
+
+/* ==========================================================
+   TIMELINE CARD
+========================================================== */
+
+.kpi-card.timeline {
+
+    border-color: #DDD6FE;
+
+    background:
+        radial-gradient(
+            circle at 92% 18%,
+            rgba(139,92,246,.12),
+            transparent 24%
+        ),
+        #FFFFFF;
+
+}
+
+/* ==========================================================
+   COST CARD
+========================================================== */
+
+.kpi-card.cost {
+
+    border-color: #BBF7D0;
+
+    background:
+        radial-gradient(
+            circle at 92% 18%,
+            rgba(34,197,94,.13),
+            transparent 24%
+        ),
+        #FBFFFC;
+
+}
+
+/* ==========================================================
+   KPI TITLE
+========================================================== */
+
+.kpi-title {
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.6px;
+
+    color: #64748B;
+
+    margin-bottom: 5px;
+
+    line-height: 1.3;
+
+}
+
+/* ==========================================================
+   KPI VALUE
+========================================================== */
+
+.kpi-value {
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    letter-spacing: -.02em;
+
+}
+
+.kpi-card.timeline .kpi-value {
+
+    color: #6D28D9;
+
+}
+
+.kpi-card.cost .kpi-value {
+
+    color: #15803D;
+
+}
+
+/* ==========================================================
+   KPI DECORATION
+========================================================== */
+
+.kpi-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 70px;
+    height: 70px;
+
+    opacity: .35;
+
+    border-radius: 50%;
+
+    transform: translate(28px,-28px);
+
+}
+
+.kpi-card.timeline::after {
+
+    background: rgba(139,92,246,.10);
+
+}
+
+.kpi-card.cost::after {
+
+    background: rgba(34,197,94,.10);
+
+}
+
+/* ==========================================================
+   KPI RESPONSIVE
+========================================================== */
+
+@media (max-width:1100px) {
+
+    .kpi-section {
+
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .kpi-card {
+
+        height: auto;
+
+        min-height: 72px;
+
+        padding: 14px 18px;
+
+    }
+
+    .kpi-title {
+
+        font-size: 9px;
+
+        letter-spacing: 1.3px;
+
+    }
+
+    .kpi-value {
+
+        font-size: 18px;
+
+    }
+
+}
+/* ==========================================================
+   BENCHMARK PANELS
+   Part 1A-3 : Timeline & Cost Containers
+========================================================== */
+
+/* ==========================================================
+   GRID WRAPPER
+========================================================== */
+
+.benchmark-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    width: 100%;
+    align-items: start;
+}
+
+/* ==========================================================
+   STACK
+========================================================== */
+
+.benchmark-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+/* ==========================================================
+   PANEL
+========================================================== */
+
+.benchmark-panel {
+
+    position: relative;
+
+    width: 100%;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E6ECF5;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 3px 12px rgba(15,23,42,.05);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+
+}
+
+/* ==========================================================
+   SPACE BETWEEN TIMELINE & COST
+========================================================== */
+
+.benchmark-panel + .benchmark-panel {
+
+    margin-top: 8px;
+
+}
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.benchmark-panel:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(15,23,42,.08);
+
+}
+
+/* ==========================================================
+   FULL WIDTH PANEL
+========================================================== */
+
+.benchmark-panel.full-width {
+
+    width: 100%;
+
+}
+
+/* ==========================================================
+   PANEL BODY
+========================================================== */
+
+.benchmark-panel-body {
+
+    width: 100%;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    background: #FFFFFF;
+
+}
+
+/* ==========================================================
+   REMOVE UNUSED HEADER
+========================================================== */
+
+.benchmark-panel-header {
+
+    display: none;
+
+}
+
+/* ==========================================================
+   REMOVE EXTRA SPACING
+========================================================== */
+
+.benchmark-panel .distribution-card {
+
+    border: none;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    margin: 0;
+
+    width: 100%;
+
+    background: #FFFFFF;
+
+}
+
+.benchmark-panel .benchmark-boxplot-card {
+
+    border: none;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    margin: 0;
+
+}
+
+.benchmark-panel .benchmark-bar-chart-card {
+
+    border: none;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    margin: 0;
+
+}
+
+/* ==========================================================
+   CLEAN BOTTOM SPACING
+========================================================== */
+
+.benchmark-summary-page {
+
+    padding-bottom: 12px;
+
+}
+
+.benchmark-panel:last-child {
+
+    margin-bottom: 0;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:1100px) {
+
+    .benchmark-grid {
+
+        gap: 18px;
+
+    }
+
+    .benchmark-stack {
+
+        gap: 18px;
+
+    }
+
+    .benchmark-panel + .benchmark-panel {
+
+        margin-top: 20px;
+
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .benchmark-summary-page {
+
+        padding: 14px;
+
+        gap: 14px;
+
+    }
+
+    .benchmark-panel {
+
+        border-radius: 12px;
+
+    }
+
+    .benchmark-panel + .benchmark-panel {
+
+        margin-top: 18px;
+
+    }
+
+}
+/* ==========================================================
+   DISTRIBUTION / CHART HEADERS
+   Part 1A-4 : Compact Professional Headers
+========================================================== */
+
+/* ==========================================================
+   DISTRIBUTION HEADER
+========================================================== */
+
+.distribution-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    min-height: 54px;
+
+    padding: 12px 18px;
+
+}
+
+.distribution-card.purple .distribution-header {
+
+    background: linear-gradient(
+        90deg,
+        #8B5CF6 0%,
+        #7C3AED 100%
+    );
+
+}
+
+.distribution-card.green .distribution-header {
+
+    background: linear-gradient(
+        90deg,
+        #22C55E 0%,
+        #16A34A 100%
+    );
+
+}
+
+/* ==========================================================
+   HEADER TITLE
+========================================================== */
+
+.distribution-header h3 {
+
+    margin: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: #FFFFFF;
+
+    letter-spacing: -.02em;
+
+    line-height: 1.2;
+
+}
+
+.distribution-header h3 span {
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    opacity: .95;
+
+}
+
+/* ==========================================================
+   BOX PLOT HEADER
+========================================================== */
+
+.benchmark-boxplot-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    min-height: 56px;
+
+    padding: 12px 18px;
+
+}
+
+.benchmark-boxplot-title h3 {
+
+    margin: 0;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: #FFFFFF;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    line-height: 1.2;
+
+}
+
+.benchmark-boxplot-title h3 span {
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    opacity: .95;
+
+}
+
+/* ==========================================================
+   BAR CHART HEADER
+========================================================== */
+
+.benchmark-bar-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    min-height: 56px;
+
+    padding: 12px 18px;
+
+}
+
+.benchmark-bar-header h3 {
+
+    margin: 0;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: #FFFFFF;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    line-height: 1.2;
+
+}
+
+.benchmark-bar-header h3 span {
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    opacity: .95;
+
+}
+
+/* ==========================================================
+   BOX PLOT FILTER
+========================================================== */
+
+.benchmark-boxplot-filter {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+.benchmark-boxplot-filter label {
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #FFFFFF;
+
+}
+
+.benchmark-boxplot-filter select {
+
+    min-width: 190px;
+
+    height: 34px;
+
+    padding: 0 10px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #FFFFFF;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #334155;
+
+}
+
+/* ==========================================================
+   BAR CHART LEGEND
+========================================================== */
+
+.benchmark-bar-legend {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    flex-wrap: wrap;
+
+}
+
+.legend-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+}
+
+.legend-color {
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 3px;
+
+}
+
+.legend-item label {
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    color: #FFFFFF;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:1100px) {
+
+    .benchmark-boxplot-header,
+    .benchmark-bar-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .distribution-header,
+    .benchmark-boxplot-header,
+    .benchmark-bar-header {
+
+        min-height: auto;
+
+        padding: 10px 14px;
+
+    }
+
+    .distribution-header h3,
+    .benchmark-boxplot-title h3,
+    .benchmark-bar-header h3 {
+
+        font-size: 14px;
+
+    }
+
+    .distribution-header h3 span,
+    .benchmark-boxplot-title h3 span,
+    .benchmark-bar-header h3 span {
+
+        font-size: 11px;
+
+    }
+
+    .benchmark-boxplot-filter {
+
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 8px;
+
+    }
+
+    .benchmark-boxplot-filter select {
+
+        width: 100%;
+
+        min-width: unset;
+
+    }
+
+}
+/* ==========================================================
+   TABLES
+   Part 1A-5 : Compact Table Layout
+========================================================== */
+
+/* ==========================================================
+   TABLE WRAPPER
+========================================================== */
+
+.distribution-table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    background: #FFFFFF;
+
+    padding: 0;
+
+    margin: 0;
+
+}
+
+.distribution-table-wrapper::-webkit-scrollbar {
+
+    height: 6px;
+
+}
+
+.distribution-table-wrapper::-webkit-scrollbar-thumb {
+
+    background: #CBD5E1;
+
+    border-radius: 999px;
+
+}
+
+.distribution-table-wrapper::-webkit-scrollbar-track {
+
+    background: #F8FAFC;
+
+}
+
+/* ==========================================================
+   TABLE
+========================================================== */
+
+.distribution-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+    margin: 0;
+
+}
+
+/* ==========================================================
+   TABLE HEADER
+========================================================== */
+
+.distribution-table thead th {
+
+    background: #F8FAFC;
+
+    border-bottom: 1px solid #E5E7EB;
+
+    border-right: 1px solid #EEF2F7;
+
+    padding: 10px 10px;
+
+    text-align: center;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #334155;
+
+    line-height: 1.25;
+
+    white-space: nowrap;
+
+}
+
+.distribution-table thead th:last-child {
+
+    border-right: none;
+
+}
+
+/* ==========================================================
+   TABLE BODY
+========================================================== */
+
+.distribution-table tbody td {
+
+    padding: 11px 10px;
+
+    border-bottom: 1px solid #EEF2F7;
+
+    border-right: 1px solid #EEF2F7;
+
+    text-align: center;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #1F2937;
+
+    line-height: 1.3;
+
+    transition: background .2s ease;
+
+}
+
+.distribution-table tbody td:last-child {
+
+    border-right: none;
+
+}
+
+.distribution-table tbody tr:last-child td {
+
+    border-bottom: none;
+
+}
+
+/* ==========================================================
+   COLUMN WIDTHS
+========================================================== */
+
+.metric-column {
+
+    width: 42%;
+
+    text-align: left !important;
+
+}
+
+.best-column {
+
+    width: 22%;
+
+}
+
+.range-column {
+
+    width: 36%;
+
+}
+
+/* ==========================================================
+   METRIC NAME
+========================================================== */
+
+.metric-name {
+
+    text-align: left !important;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #111827;
+
+    letter-spacing: -.01em;
+
+}
+
+/* ==========================================================
+   BEST VALUE
+========================================================== */
+
+.best-value {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #15803D;
+
+}
+
+/* ==========================================================
+   RANGE VALUE
+========================================================== */
+
+.range-value {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #2563EB;
+
+}
+
+/* ==========================================================
+   COMPARISON TABLE
+========================================================== */
+
+.dynamic-column {
+
+    min-width: 120px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #334155;
+
+}
+
+.dynamic-value {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+    white-space: nowrap;
+
+}
+
+/* ==========================================================
+   ROW HOVER
+========================================================== */
+
+.distribution-table tbody tr {
+
+    transition: background .2s ease;
+
+}
+
+.distribution-table tbody tr:hover td {
+
+    background: #F8FBFF;
+
+}
+
+/* ==========================================================
+   REMOVE FOOTER
+========================================================== */
+
+.distribution-footer {
+
+    display: none;
+
+}
+
+/* ==========================================================
+   CLEAN SPACING
+========================================================== */
+
+.distribution-card {
+
+    margin: 0;
+
+    height: auto;
+
+}
+
+.benchmark-panel-body {
+
+    padding: 0;
+
+}
+
+.distribution-table-wrapper {
+
+    margin-bottom: 0;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:1200px) {
+
+    .distribution-table {
+
+        min-width: 760px;
+
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .distribution-table thead th {
+
+        padding: 9px 8px;
+
+        font-size: 11px;
+
+    }
+
+    .distribution-table tbody td {
+
+        padding: 10px 8px;
+
+        font-size: 11px;
+
+    }
+
+    .metric-name,
+    .best-value,
+    .range-value,
+    .dynamic-value {
+
+        font-size: 11px;
+
+    }
+
+}
+/* ==========================================================
+   RESPONSIVE
+   Part 1A-6 : Final Responsive & Animations
+========================================================== */
+
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media (max-width:1400px) {
+
+    .filter-toolbar {
+
+        grid-template-columns: repeat(4, minmax(0,1fr));
+
+        gap: 12px;
+
+    }
+
+    .benchmark-grid {
+
+        gap: 20px;
+
+    }
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:1100px) {
+
+    .benchmark-summary-page {
+
+        padding: 16px;
+
+        gap: 16px;
+
+    }
+
+    .filter-toolbar {
+
+        grid-template-columns: repeat(3, minmax(0,1fr));
+
+    }
+
+    .kpi-section {
+
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+    }
+
+    .benchmark-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+    }
+
+    .benchmark-stack {
+
+        gap: 18px;
+
+    }
+
+    .benchmark-panel {
+
+        border-radius: 14px;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px) {
+
+    .benchmark-summary-page {
+
+        padding: 14px;
+
+        gap: 14px;
+
+    }
+
+    .filter-toolbar {
+
+        grid-template-columns: repeat(2, minmax(0,1fr));
+
+        gap: 10px;
+
+    }
+
+    .filter-card {
+
+        padding: 14px;
+
+    }
+
+    .filter-item label {
+
+        font-size: 9px;
+
+    }
+
+    .filter-select select {
+
+        height: 34px;
+
+        font-size: 11px;
+
+    }
+
+    .benchmark-panel {
+
+        border-radius: 12px;
+
+    }
+
+    .benchmark-panel + .benchmark-panel {
+
+        margin-top: 18px;
+
+    }
+
+    .distribution-header {
+
+        padding: 10px 14px;
+
+    }
+
+    .distribution-header h3 {
+
+        font-size: 14px;
+
+    }
+
+    .distribution-header h3 span {
+
+        font-size: 11px;
+
+    }
+
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width:480px) {
+
+    .benchmark-summary-page {
+
+        padding: 10px;
+
+    }
+
+    .filter-toolbar {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .kpi-section {
+
+        gap: 12px;
+
+    }
+
+}
+
+/* ==========================================================
+   SMOOTH ANIMATIONS
+========================================================== */
+
+.benchmark-panel,
+.filter-card,
+.kpi-card,
+.distribution-card,
+.benchmark-boxplot-card,
+.benchmark-bar-chart-card {
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease,
+        background .25s ease;
+
+}
+
+.benchmark-panel:hover,
+.filter-card:hover,
+.kpi-card:hover {
+
+    transform: translateY(-2px);
+
+}
+
+.distribution-table tbody tr,
+.benchmark-row,
+.legend-item {
+
+    transition: all .2s ease;
+
+}
+
+.distribution-table tbody tr:hover td {
+
+    background: #F8FBFF;
+
+}
+
+select {
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+
+}
+
+/* ==========================================================
+   REMOVE EXTRA WHITE SPACE
+========================================================== */
+
+.benchmark-summary-page > *:last-child {
+
+    margin-bottom: 0;
+
+}
+
+.benchmark-panel:last-child {
+
+    margin-bottom: 0;
+
+}
+
+.distribution-card:last-child,
+.benchmark-boxplot-card:last-child,
+.benchmark-bar-chart-card:last-child {
+
+    margin-bottom: 0;
+
+}
+
+.distribution-table {
+
+    margin-bottom: 0;
+
+}
+
+.distribution-table-wrapper {
+
+    margin-bottom: 0;
+
+}
+
+/* ==========================================================
+   BETTER SCROLLBAR
+========================================================== */
+
+*::-webkit-scrollbar {
+
+    width: 8px;
+
+    height: 8px;
+
+}
+
+*::-webkit-scrollbar-thumb {
+
+    background: #CBD5E1;
+
+    border-radius: 999px;
+
+}
+
+*::-webkit-scrollbar-thumb:hover {
+
+    background: #94A3B8;
+
+}
+
+*::-webkit-scrollbar-track {
+
+    background: #F8FAFC;
+
+}
+
+/* ==========================================================
+   END OF BenchmarkSummary.css
+========================================================== */

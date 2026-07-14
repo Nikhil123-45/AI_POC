@@ -1,0 +1,714 @@
+/* ==========================================================
+   BenchmarkRow.css
+   Part 5A-1 : Row + Label + Chart
+========================================================== */
+
+/* ==========================================================
+   ROW
+========================================================== */
+
+.benchmark-row {
+
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    align-items: center;
+
+    min-height: 64px;
+
+    padding: 6px 0;
+
+    border-bottom: 1px solid #E8EEF5;
+
+    background: #FFFFFF;
+
+    transition:
+        background .25s ease,
+        transform .25s ease;
+
+}
+
+.benchmark-row:last-child {
+
+    border-bottom: none;
+
+}
+
+/* ==========================================================
+   LABEL
+========================================================== */
+
+.benchmark-row-label {
+
+    display: flex;
+
+    align-items: center;
+
+    height: 100%;
+
+    padding-right: 16px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1.35;
+
+    color: #334155;
+
+    word-break: break-word;
+
+    overflow-wrap: anywhere;
+
+}
+
+/* ==========================================================
+   CHART AREA
+========================================================== */
+
+.benchmark-row-chart {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: visible;
+
+}
+
+/* ==========================================================
+   CHART INNER
+========================================================== */
+
+.benchmark-row-chart * {
+
+    box-sizing: border-box;
+
+}
+
+/* ==========================================================
+   ROW STATES
+========================================================== */
+
+.benchmark-row:hover {
+
+    background: #F8FBFF;
+
+}
+
+.benchmark-row:focus-within {
+
+    background: #F8FBFF;
+
+}
+
+/* ==========================================================
+   SPACING HELPERS
+========================================================== */
+
+.benchmark-row + .benchmark-row {
+
+    margin-top: 2px;
+
+}
+
+.benchmark-row:first-child {
+
+    margin-top: 0;
+
+}
+/* ==========================================================
+   GRID
+   Part 5A-2 : Grid + Connector + Best / Worst
+========================================================== */
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.benchmark-grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(13, 1fr);
+
+    pointer-events: none;
+
+}
+
+.grid-line {
+
+    height: 100%;
+
+    border-left: 1px solid #E8EEF5;
+
+}
+
+.grid-line:first-child {
+
+    border-left: none;
+
+}
+
+/* ==========================================================
+   CONNECTOR LINE
+========================================================== */
+
+.benchmark-connector {
+
+    position: absolute;
+
+    top: 26px;
+
+    height: 2px;
+
+    background: #94A3B8;
+
+    border-radius: 999px;
+
+    z-index: 1;
+
+}
+
+/* ==========================================================
+   BEST DOT
+========================================================== */
+
+.benchmark-best-dot {
+
+    position: absolute;
+
+    top: 21px;
+
+    width: 10px;
+
+    height: 10px;
+
+    margin-left: -5px;
+
+    border-radius: 50%;
+
+    background: #22C55E;
+
+    border: 2px solid #FFFFFF;
+
+    box-shadow: 0 0 0 2px #22C55E;
+
+    z-index: 5;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.benchmark-best-value {
+
+    position: absolute;
+
+    top: 2px;
+
+    transform: translateX(-50%);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    color: #15803D;
+
+    white-space: nowrap;
+
+}
+
+/* ==========================================================
+   WORST DOT
+========================================================== */
+
+.benchmark-worst-dot {
+
+    position: absolute;
+
+    top: 21px;
+
+    width: 10px;
+
+    height: 10px;
+
+    margin-left: -5px;
+
+    border-radius: 50%;
+
+    background: #F59E0B;
+
+    border: 2px solid #FFFFFF;
+
+    box-shadow: 0 0 0 2px #F59E0B;
+
+    z-index: 5;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.benchmark-worst-value {
+
+    position: absolute;
+
+    top: 2px;
+
+    transform: translateX(-50%);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    color: #EA580C;
+
+    white-space: nowrap;
+
+}
+/* ==========================================================
+   RANGE BAR
+   Part 5A-3 : Typical Range + Hover
+========================================================== */
+
+/* ==========================================================
+   RANGE BAR
+========================================================== */
+
+.benchmark-range {
+
+    position: absolute;
+
+    top: 15px;
+
+    height: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    z-index: 4;
+
+    color: #FFFFFF;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .15px;
+
+    box-shadow:
+        0 2px 6px rgba(37,99,235,.16);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+
+}
+
+/* ==========================================================
+   PURPLE THEME
+========================================================== */
+
+.benchmark-range.purple {
+
+    background: linear-gradient(
+        180deg,
+        #5B9CFF 0%,
+        #2F6DF6 100%
+    );
+
+}
+
+/* ==========================================================
+   GREEN THEME
+========================================================== */
+
+.benchmark-range.green {
+
+    background: linear-gradient(
+        180deg,
+        #5B9CFF 0%,
+        #2F6DF6 100%
+    );
+
+}
+
+/* ==========================================================
+   RANGE LABEL
+========================================================== */
+
+.benchmark-range span {
+
+    position: relative;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    white-space: nowrap;
+
+    padding: 0 8px;
+
+    line-height: 1;
+
+}
+
+/* ==========================================================
+   RANGE SHINE
+========================================================== */
+
+.benchmark-range::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,.18),
+        rgba(255,255,255,0)
+    );
+
+    pointer-events: none;
+
+}
+
+/* ==========================================================
+   ROW HOVER
+========================================================== */
+
+.benchmark-row:hover {
+
+    background: #F8FBFF;
+
+}
+
+.benchmark-row:hover .benchmark-range {
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 16px rgba(37,99,235,.20);
+
+}
+
+.benchmark-row:hover .benchmark-best-dot,
+
+.benchmark-row:hover .benchmark-worst-dot {
+
+    transform: scale(1.10);
+
+}
+
+.benchmark-row:hover .benchmark-best-value {
+
+    color: #047857;
+
+}
+
+.benchmark-row:hover .benchmark-worst-value {
+
+    color: #C2410C;
+
+}
+
+/* ==========================================================
+   ACTIVE STATE
+========================================================== */
+
+.benchmark-row:active .benchmark-range {
+
+    transform: scale(.99);
+
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.benchmark-range,
+.benchmark-best-dot,
+.benchmark-worst-dot {
+
+    will-change: transform;
+
+}
+/* ==========================================================
+   RESPONSIVE
+   Part 5A-4 : Responsive + Cleanup
+========================================================== */
+
+/* ==========================================================
+   LARGE LAPTOP
+========================================================== */
+
+@media (max-width:1400px) {
+
+    .benchmark-row {
+
+        grid-template-columns: 170px 1fr;
+
+        min-height: 60px;
+
+    }
+
+    .benchmark-row-label {
+
+        font-size: 11px;
+
+    }
+
+    .benchmark-row-chart {
+
+        height: 50px;
+
+    }
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:992px) {
+
+    .benchmark-row {
+
+        grid-template-columns: 160px 1fr;
+
+        min-width: 880px;
+
+        min-height: 58px;
+
+    }
+
+    .benchmark-row-label {
+
+        font-size: 11px;
+
+    }
+
+    .benchmark-row-chart {
+
+        height: 48px;
+
+    }
+
+    .benchmark-best-value,
+
+    .benchmark-worst-value {
+
+        font-size: 9px;
+
+    }
+
+    .benchmark-range {
+
+        height: 20px;
+
+        font-size: 9px;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px) {
+
+    .benchmark-row {
+
+        grid-template-columns: 145px 1fr;
+
+        min-width: 760px;
+
+        min-height: 54px;
+
+        padding: 4px 0;
+
+    }
+
+    .benchmark-row-label {
+
+        font-size: 10px;
+
+        padding-right: 10px;
+
+    }
+
+    .benchmark-row-chart {
+
+        height: 44px;
+
+    }
+
+    .benchmark-connector {
+
+        top: 22px;
+
+    }
+
+    .benchmark-best-dot,
+
+    .benchmark-worst-dot {
+
+        width: 8px;
+
+        height: 8px;
+
+        margin-left: -4px;
+
+        top: 18px;
+
+    }
+
+    .benchmark-best-value,
+
+    .benchmark-worst-value {
+
+        font-size: 8px;
+
+        top: 0;
+
+    }
+
+    .benchmark-range {
+
+        top: 13px;
+
+        height: 18px;
+
+        border-radius: 4px;
+
+        font-size: 8px;
+
+    }
+
+    .benchmark-range span {
+
+        padding: 0 6px;
+
+    }
+
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width:480px) {
+
+    .benchmark-row {
+
+        grid-template-columns: 130px 1fr;
+
+        min-width: 700px;
+
+    }
+
+    .benchmark-row-label {
+
+        font-size: 9px;
+
+    }
+
+}
+
+/* ==========================================================
+   SMOOTH TRANSITIONS
+========================================================== */
+
+.benchmark-row,
+.benchmark-row-chart,
+.benchmark-range,
+.benchmark-best-dot,
+.benchmark-worst-dot,
+.benchmark-best-value,
+.benchmark-worst-value,
+.benchmark-connector {
+
+    transition:
+        all .25s ease;
+
+}
+
+/* ==========================================================
+   CLEANUP
+========================================================== */
+
+.benchmark-row:last-child {
+
+    border-bottom: none;
+
+}
+
+.benchmark-row-chart {
+
+    overflow: visible;
+
+}
+
+.benchmark-grid {
+
+    pointer-events: none;
+
+}
+
+.grid-line:last-child {
+
+    border-right: 1px solid #E8EEF5;
+
+}
+
+/* ==========================================================
+   IMPROVED TEXT RENDERING
+========================================================== */
+
+.benchmark-row-label,
+.benchmark-best-value,
+.benchmark-worst-value,
+.benchmark-range {
+
+    -webkit-font-smoothing: antialiased;
+
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+/* ==========================================================
+   END OF BenchmarkRow.css
+========================================================== */

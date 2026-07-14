@@ -1,0 +1,258 @@
+/* =========================================================
+   Page
+========================================================= */
+
+.indication-benchmark {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 20px;
+}
+
+/* =========================================================
+   Section Card
+========================================================= */
+
+.benchmark-section {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+/* =========================================================
+   Header
+========================================================= */
+
+.section-header {
+  margin-bottom: 18px;
+}
+
+.section-title {
+  margin: 0;
+  color: #111827;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.section-unit {
+  margin-left: 6px;
+  color: #6B7280;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.section-description {
+  margin-top: 6px;
+  color: #6B7280;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   Benchmark Card
+========================================================= */
+
+.benchmark-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+/* =========================================================
+   Card Header
+========================================================= */
+
+.benchmark-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #E5E7EB;
+  background: #FFFFFF;
+}
+
+.benchmark-header h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.benchmark-unit {
+  margin-left: 6px;
+  color: #6B7280;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* =========================================================
+   Table
+========================================================= */
+
+.benchmark-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.benchmark-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* =========================================================
+   Header
+========================================================= */
+
+.benchmark-table thead tr {
+  background: #F8FAFC;
+}
+
+.benchmark-table th {
+  padding: 16px 12px;
+  border-bottom: 1px solid #E5E7EB;
+  border-right: 1px solid #E5E7EB;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.benchmark-table th:last-child {
+  border-right: none;
+}
+
+.metric-title {
+  color: #111827;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.metric-subtitle {
+  margin-top: 4px;
+  color: #6B7280;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* =========================================================
+   Body
+========================================================= */
+
+.benchmark-table tbody tr {
+  transition: background .2s ease;
+}
+
+.benchmark-table tbody tr:nth-child(even) {
+  background: #F9FAFB;
+}
+
+.benchmark-table tbody tr:hover {
+  background: #EFF6FF;
+}
+
+.benchmark-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #E5E7EB;
+  border-right: 1px solid #E5E7EB;
+  text-align: center;
+  font-size: 13px;
+  color: #111827;
+}
+
+.benchmark-table td:last-child {
+  border-right: none;
+}
+
+/* =========================================================
+   Indication
+========================================================= */
+
+.indication-column {
+  width: 260px;
+}
+
+.indication-name {
+  text-align: left !important;
+  color: #111827;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* =========================================================
+   Metric Value
+========================================================= */
+
+.metric-value {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  white-space: nowrap;
+  color: #111827;
+}
+
+/* =========================================================
+   Footer
+========================================================= */
+
+.benchmark-footer {
+  padding: 14px 20px;
+  border-top: 1px solid #E5E7EB;
+  background: #F8FAFC;
+  color: #6B7280;
+  font-size: 12px;
+}
+
+/* =========================================================
+   Scrollbar
+========================================================= */
+
+.benchmark-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.benchmark-table-wrapper::-webkit-scrollbar-track {
+  background: #F3F4F6;
+}
+
+.benchmark-table-wrapper::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 20px;
+}
+
+.benchmark-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* =========================================================
+   Responsive
+========================================================= */
+
+@media (max-width:1200px){
+
+  .benchmark-table{
+    min-width:1100px;
+  }
+
+}
+
+@media (max-width:768px){
+
+  .benchmark-section{
+    padding:16px;
+  }
+
+  .section-title{
+    font-size:16px;
+  }
+
+  .benchmark-header h2{
+    font-size:15px;
+  }
+
+  .benchmark-table th,
+  .benchmark-table td{
+    padding:12px 10px;
+  }
+
+}

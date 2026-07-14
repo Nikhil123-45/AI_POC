@@ -1,0 +1,717 @@
+/* ==========================================================
+   BenchmarkDistributionTable.css
+   Part 2A-1 : Card + Header
+========================================================== */
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.distribution-card {
+
+    width: 100%;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E6ECF5;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow: 0 2px 8px rgba(15,23,42,.04);
+
+    margin: 0;
+
+    font-family: "Inter", sans-serif;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+
+}
+
+.distribution-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(15,23,42,.08);
+
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.distribution-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    min-height: 52px;
+
+    padding: 12px 18px;
+
+}
+
+/* ==========================================================
+   PURPLE HEADER
+========================================================== */
+
+.distribution-card.purple .distribution-header {
+
+    background: linear-gradient(
+        90deg,
+        #8B5CF6 0%,
+        #7C3AED 100%
+    );
+
+}
+
+/* ==========================================================
+   GREEN HEADER
+========================================================== */
+
+.distribution-card.green .distribution-header {
+
+    background: linear-gradient(
+        90deg,
+        #22C55E 0%,
+        #16A34A 100%
+    );
+
+}
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.distribution-header h3 {
+
+    margin: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #FFFFFF;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: -.02em;
+
+    line-height: 1.2;
+
+}
+
+.distribution-header h3 span {
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    opacity: .95;
+
+}
+
+/* ==========================================================
+   TABLE WRAPPER
+========================================================== */
+
+.distribution-table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    background: #FFFFFF;
+
+    padding: 0;
+
+    margin: 0;
+
+}
+
+.distribution-table-wrapper::-webkit-scrollbar {
+
+    height: 6px;
+
+}
+
+.distribution-table-wrapper::-webkit-scrollbar-thumb {
+
+    background: #CBD5E1;
+
+    border-radius: 999px;
+
+}
+
+.distribution-table-wrapper::-webkit-scrollbar-track {
+
+    background: #F8FAFC;
+
+}
+/* ==========================================================
+   TABLE
+   Part 2A-2 : Table Header + Table Body
+========================================================== */
+
+/* ==========================================================
+   TABLE
+========================================================== */
+
+.distribution-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+    margin: 0;
+
+    font-family: "Inter", sans-serif;
+
+}
+
+/* ==========================================================
+   TABLE HEADER
+========================================================== */
+
+.distribution-table thead th {
+
+    background: #F8FAFC;
+
+    border-bottom: 1px solid #E5E7EB;
+
+    border-right: 1px solid #EEF2F7;
+
+    padding: 10px 10px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #334155;
+
+    line-height: 1.25;
+
+    white-space: nowrap;
+
+    vertical-align: middle;
+
+}
+
+.distribution-table thead th:last-child {
+
+    border-right: none;
+
+}
+
+/* ==========================================================
+   HEADER COLORS
+========================================================== */
+
+.distribution-table thead th.metric-column {
+
+    color: #1F2937;
+
+}
+
+.distribution-table thead th.best-column {
+
+    color: #15803D;
+
+}
+
+.distribution-table thead th.range-column {
+
+    color: #2563EB;
+
+}
+
+/* ==========================================================
+   TABLE BODY
+========================================================== */
+
+.distribution-table tbody td {
+
+    padding: 11px 10px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #EEF2F7;
+
+    border-right: 1px solid #EEF2F7;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #111827;
+
+    line-height: 1.3;
+
+    vertical-align: middle;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+
+}
+
+.distribution-table tbody td:last-child {
+
+    border-right: none;
+
+}
+
+.distribution-table tbody tr:last-child td {
+
+    border-bottom: none;
+
+}
+
+/* ==========================================================
+   ROW HEIGHT
+========================================================== */
+
+.distribution-table tbody tr {
+
+    height: 42px;
+
+}
+
+/* ==========================================================
+   ALTERNATE ROW BACKGROUND
+========================================================== */
+
+.distribution-table tbody tr:nth-child(even) {
+
+    background: #FCFDFE;
+
+}
+
+.distribution-table tbody tr:nth-child(odd) {
+
+    background: #FFFFFF;
+
+}
+/* ==========================================================
+   COLUMN WIDTHS
+   Part 2A-3 : Metric / Best / Range
+========================================================== */
+
+/* ==========================================================
+   COLUMN WIDTHS
+========================================================== */
+
+.metric-column {
+
+    width: 44%;
+
+    text-align: left !important;
+
+}
+
+.best-column {
+
+    width: 22%;
+
+    text-align: center !important;
+
+}
+
+.range-column {
+
+    width: 34%;
+
+    text-align: center !important;
+
+}
+
+/* ==========================================================
+   METRIC COLUMN
+========================================================== */
+
+.metric-name {
+
+    text-align: left !important;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #111827;
+
+    letter-spacing: -.01em;
+
+    line-height: 1.35;
+
+    white-space: normal;
+
+}
+
+/* ==========================================================
+   BEST IN CLASS VALUE
+========================================================== */
+
+.best-value {
+
+    color: #15803D !important;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700 !important;
+
+    letter-spacing: -.01em;
+
+    line-height: 1.2;
+
+}
+
+/* ==========================================================
+   TYPICAL RANGE VALUE
+========================================================== */
+
+.range-value {
+
+    color: #2563EB !important;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700 !important;
+
+    letter-spacing: -.01em;
+
+    line-height: 1.2;
+
+}
+
+/* ==========================================================
+   VALUE ALIGNMENT
+========================================================== */
+
+.best-value,
+.range-value {
+
+    display: table-cell;
+
+    vertical-align: middle;
+
+}
+
+/* ==========================================================
+   LONG METRIC SUPPORT
+========================================================== */
+
+.metric-name {
+
+    word-break: break-word;
+
+    overflow-wrap: anywhere;
+
+}
+
+/* ==========================================================
+   VALUE EMPHASIS
+========================================================== */
+
+.best-value {
+
+    text-shadow: none;
+
+}
+
+.range-value {
+
+    text-shadow: none;
+
+}
+/* ==========================================================
+   HOVER EFFECTS
+   Part 2A-4 : Hover + Responsive + Cleanup
+========================================================== */
+
+/* ==========================================================
+   ROW HOVER
+========================================================== */
+
+.distribution-table tbody tr {
+
+    transition:
+        background .20s ease,
+        transform .20s ease;
+
+}
+
+.distribution-table tbody tr:hover td {
+
+    background: #F8FBFF;
+
+}
+
+.distribution-table tbody tr:hover .metric-name {
+
+    color: #0F172A;
+
+}
+
+.distribution-table tbody tr:hover .best-value {
+
+    color: #047857 !important;
+
+}
+
+.distribution-table tbody tr:hover .range-value {
+
+    color: #1D4ED8 !important;
+
+}
+
+/* ==========================================================
+   CARD HOVER
+========================================================== */
+
+.distribution-card:hover {
+
+    border-color: #D8E3F2;
+
+    box-shadow:
+        0 8px 20px rgba(15,23,42,.08);
+
+}
+
+/* ==========================================================
+   REMOVE UNUSED FOOTER
+========================================================== */
+
+.distribution-footer {
+
+    display: none;
+
+}
+
+/* ==========================================================
+   REMOVE EXTRA SPACING
+========================================================== */
+
+.distribution-card {
+
+    margin: 0;
+
+    height: auto;
+
+}
+
+.distribution-table {
+
+    margin: 0;
+
+}
+
+.distribution-table-wrapper {
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+.distribution-table tbody tr:last-child td {
+
+    border-bottom: none;
+
+}
+
+/* ==========================================================
+   RESPONSIVE - LARGE LAPTOP
+========================================================== */
+
+@media (max-width:1400px) {
+
+    .distribution-header {
+
+        padding: 11px 16px;
+
+    }
+
+    .distribution-header h3 {
+
+        font-size: 15px;
+
+    }
+
+    .distribution-header h3 span {
+
+        font-size: 12px;
+
+    }
+
+}
+
+/* ==========================================================
+   RESPONSIVE - TABLET
+========================================================== */
+
+@media (max-width:992px) {
+
+    .distribution-card {
+
+        overflow-x: auto;
+
+    }
+
+    .distribution-table {
+
+        min-width: 720px;
+
+    }
+
+    .distribution-header {
+
+        padding: 10px 15px;
+
+    }
+
+    .distribution-header h3 {
+
+        font-size: 14px;
+
+    }
+
+    .distribution-header h3 span {
+
+        font-size: 11px;
+
+    }
+
+    .distribution-table thead th {
+
+        font-size: 11px;
+
+        padding: 9px 8px;
+
+    }
+
+    .distribution-table tbody td {
+
+        font-size: 11px;
+
+        padding: 10px 8px;
+
+    }
+
+    .metric-name {
+
+        font-size: 11px;
+
+    }
+
+    .best-value,
+
+    .range-value {
+
+        font-size: 11px;
+
+    }
+
+}
+
+/* ==========================================================
+   RESPONSIVE - MOBILE
+========================================================== */
+
+@media (max-width:768px) {
+
+    .distribution-table {
+
+        min-width: 650px;
+
+    }
+
+    .distribution-header {
+
+        min-height: 46px;
+
+        padding: 9px 14px;
+
+    }
+
+    .distribution-header h3 {
+
+        font-size: 13px;
+
+    }
+
+    .distribution-header h3 span {
+
+        font-size: 10px;
+
+    }
+
+    .distribution-table thead th {
+
+        font-size: 10px;
+
+        padding: 8px 6px;
+
+    }
+
+    .distribution-table tbody td {
+
+        font-size: 10px;
+
+        padding: 9px 6px;
+
+    }
+
+    .metric-name,
+
+    .best-value,
+
+    .range-value {
+
+        font-size: 10px;
+
+    }
+
+}
+
+/* ==========================================================
+   SMOOTH TRANSITIONS
+========================================================== */
+
+.distribution-card,
+.distribution-header,
+.distribution-table,
+.distribution-table tbody td {
+
+    transition:
+        all .25s ease;
+
+}
+
+/* ==========================================================
+   END OF FILE
+========================================================== */

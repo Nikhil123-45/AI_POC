@@ -1,0 +1,333 @@
+/* ==========================================
+   CARD
+========================================== */
+
+.vendor-cost-card{
+  background:#FFFFFF;
+  border:1px solid #E5E7EB;
+  border-radius:16px;
+  padding:20px 24px;
+  margin-top:20px;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.vendor-cost-header{
+  display:flex;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.vendor-cost-title{
+  margin:0;
+  color:#111827;
+  font-size:16px;
+  font-weight:600;
+  display:flex;
+  align-items:baseline;
+  gap:4px;
+}
+
+.vendor-cost-title-unit{
+  color:#6B7280;
+  font-size:12px;
+  font-weight:500;
+}
+
+/* ==========================================
+   TABLE HEADER
+========================================== */
+
+.vendor-cost-table-header{
+  display:flex;
+  align-items:center;
+  border-bottom:1px solid #E5E7EB;
+  padding-bottom:14px;
+  margin-bottom:10px;
+}
+
+.metric-column{
+  width:28%;
+}
+
+.vendor-column{
+  width:24%;
+  display:flex;
+  justify-content:center;
+}
+
+.vendor-name{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#111827;
+  font-size:14px;
+  font-weight:600;
+}
+
+/* ==========================================
+   LEGEND DOTS
+========================================== */
+
+.vendor-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+}
+
+.iqvia-dot{
+  background:#3B82F6;
+}
+
+.icon-dot{
+  background:#84CC16;
+}
+
+.parexel-dot{
+  background:#F59E0B;
+}
+
+/* ==========================================
+   ROW
+========================================== */
+
+.vendor-cost-row{
+  display:flex;
+  align-items:center;
+  padding:20px 0;
+  border-bottom:1px solid #E5E7EB;
+  transition:all .25s ease;
+}
+
+.vendor-cost-row:last-child{
+  border-bottom:none;
+}
+
+.vendor-cost-row:hover{
+  background:#EFF6FF;
+}
+
+/* ==========================================
+   METRIC
+========================================== */
+
+.metric-info{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.metric-icon{
+  width:36px;
+  height:36px;
+  border-radius:10px;
+  background:#DBEAFE;
+  color:#2563EB;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+  transition:all .25s ease;
+}
+
+.metric-info span{
+  color:#111827;
+  font-size:14px;
+  font-weight:500;
+  line-height:1.3;
+}
+
+/* ==========================================
+   RANGE BLOCK
+========================================== */
+
+.range-block{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+}
+
+.range-text{
+  color:#2563EB;
+  background:#EFF6FF;
+  border:1px solid #BFDBFE;
+  padding:3px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+  line-height:1;
+  white-space:nowrap;
+}
+
+/* ==========================================
+   RANGE BAR
+========================================== */
+
+.range-line{
+  width:78%;
+  height:8px;
+  border-radius:999px;
+  position:relative;
+  transition:all .25s ease;
+}
+
+.range-circle{
+  position:absolute;
+  top:50%;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  transform:translateY(-50%);
+  border:2px solid #FFFFFF;
+  transition:all .25s ease;
+}
+
+.range-circle:first-child{
+  left:0;
+}
+
+.range-circle:last-child{
+  right:0;
+}
+
+/* ==========================================
+   IQVIA
+========================================== */
+
+.iqvia-line{
+  background:rgba(59,130,246,.25);
+}
+
+.iqvia-circle{
+  background:#3B82F6;
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.icon-line{
+  background:rgba(132,204,22,.25);
+}
+
+.icon-circle{
+  background:#84CC16;
+}
+
+/* ==========================================
+   PAREXEL
+========================================== */
+
+.parexel-line{
+  background:rgba(245,158,11,.25);
+}
+
+.parexel-circle{
+  background:#F59E0B;
+}
+
+/* ==========================================
+   HOVER EFFECTS
+========================================== */
+
+.vendor-cost-row:hover .metric-icon{
+  transform:scale(1.08);
+}
+
+.vendor-cost-row:hover .range-line{
+  filter:brightness(1.08);
+}
+
+.vendor-cost-row:hover .range-circle{
+  transform:translateY(-50%) scale(1.15);
+}
+
+.vendor-cost-row:hover .range-text{
+  background:#DBEAFE;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:1200px){
+
+  .vendor-cost-card{
+    padding:18px;
+  }
+
+  .metric-column{
+    width:30%;
+  }
+
+  .vendor-column{
+    width:23.3%;
+  }
+
+  .range-line{
+    width:72%;
+  }
+
+  .range-text{
+    font-size:11px;
+  }
+
+}
+
+@media (max-width:992px){
+
+  .vendor-cost-table-header{
+    display:none;
+  }
+
+  .vendor-cost-row{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:18px;
+    padding:20px 0;
+  }
+
+  .metric-column,
+  .vendor-column{
+    width:100%;
+  }
+
+  .vendor-column{
+    justify-content:flex-start;
+  }
+
+  .range-block{
+    width:100%;
+    align-items:flex-start;
+  }
+
+  .range-line{
+    width:100%;
+  }
+
+}
+
+@media (max-width:768px){
+
+  .vendor-cost-title{
+    font-size:15px;
+  }
+
+  .vendor-cost-title-unit{
+    font-size:11px;
+  }
+
+  .metric-info span{
+    font-size:13px;
+  }
+
+  .range-text{
+    font-size:11px;
+  }
+
+}

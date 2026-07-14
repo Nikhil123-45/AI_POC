@@ -1,0 +1,244 @@
+/* ==========================================================
+   AI INSIGHTS CARD
+========================================================== */
+
+.ai-insights-card{
+    background:#FFFFFF;
+    border:1px solid #E5EAF3;
+    border-radius:18px;
+    padding:18px;
+    box-shadow:0 6px 18px rgba(15,23,42,.05);
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    height:fit-content;
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.ai-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-bottom:12px;
+    border-bottom:1px solid #EEF2F7;
+}
+
+.ai-title{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:17px;
+    font-weight:700;
+    color:#7C3AED;
+}
+
+.ai-title svg{
+    width:18px;
+    height:18px;
+}
+
+.ai-badge{
+    background:#F3E8FF;
+    color:#7C3AED;
+    border:1px solid #DDD6FE;
+    border-radius:999px;
+    padding:4px 10px;
+    font-size:10px;
+    font-weight:700;
+}
+
+/* ==========================================================
+   INSIGHTS
+========================================================== */
+
+.ai-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.ai-item{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    padding:12px;
+    border:1px solid #E5EAF3;
+    border-radius:12px;
+    background:#FCFDFF;
+    transition:.25s;
+}
+
+.ai-item:hover{
+    border-color:#3B82F6;
+    box-shadow:0 6px 16px rgba(37,99,235,.06);
+    transform:translateY(-1px);
+}
+
+.ai-icon{
+    width:36px;
+    height:36px;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-shrink:0;
+}
+
+.ai-icon svg{
+    width:17px;
+    height:17px;
+}
+
+/* ==========================================================
+   ICON COLORS
+========================================================== */
+
+.ai-icon.green{
+    background:#DCFCE7;
+    color:#15803D;
+}
+
+.ai-icon.orange{
+    background:#FEF3C7;
+    color:#D97706;
+}
+
+.ai-icon.blue{
+    background:#DBEAFE;
+    color:#2563EB;
+}
+
+.ai-icon.purple{
+    background:#F3E8FF;
+    color:#7C3AED;
+}
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.ai-content{
+    flex:1;
+}
+
+.ai-item-title{
+    color:#0F172A;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:4px;
+}
+
+.ai-item-text{
+    font-size:11px;
+    font-weight:600;
+    line-height:1.6;
+}
+
+
+/* ==========================================================
+   RECOMMENDATION
+========================================================== */
+
+.ai-recommendation{
+    background:linear-gradient(135deg,#EEF2FF,#F5F3FF);
+    border:1px solid #DDD6FE;
+    border-radius:12px;
+    padding:14px;
+}
+
+.recommendation-title{
+    color:#7C3AED;
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.recommendation-text{
+    color:#475569;      /* Keep same colour */
+    font-size:12px;     /* Keep same font size */
+    font-weight:600;    /* Make text bold */
+    line-height:1.6;
+}
+
+.recommendation-text strong{
+    color:#2563EB;
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.ai-footer{
+    border-top:1px solid #EEF2F7;
+    padding-top:12px;
+}
+
+.confidence{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.confidence span{
+    width:68px;
+    font-size:11px;
+    font-weight:700;
+    color:#475569;
+}
+
+.confidence strong{
+    font-size:12px;
+    color:#0F172A;
+    font-weight:700;
+}
+
+.confidence-bar{
+    flex:1;
+    height:7px;
+    border-radius:999px;
+    background:#E2E8F0;
+    overflow:hidden;
+}
+
+.confidence-fill{
+    height:100%;
+    border-radius:999px;
+    background:linear-gradient(90deg,#2563EB,#7C3AED);
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:992px){
+
+    .ai-insights-card{
+        margin-top:16px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .ai-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .ai-item{
+        padding:10px;
+    }
+
+    .ai-title{
+        font-size:16px;
+    }
+
+    .confidence{
+        flex-wrap:wrap;
+    }
+
+}
